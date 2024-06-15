@@ -1,3 +1,5 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_weather/features/search_weather/presentation/cubit/search_cubit.dart';
@@ -10,13 +12,13 @@ import 'injection_container.dart';
 void main() {
 
   initServiceLocator();
-  runApp(const MyApp());
+   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
             SearchCubit(searchUseCase: SearchUseCase(getIt.get<SearchRepoImpl>()))
           ,)
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRoutes.onGenerateRoute,
 
       ),

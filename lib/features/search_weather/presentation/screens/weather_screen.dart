@@ -12,20 +12,7 @@ class WeatherScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: buildAppBar(),
-        body: const WeatherBody()
-    );
+    return Scaffold(body: const WeatherBody());
   }
 }
-
-
-AppBar buildAppBar()=>AppBar(
-  title: const Text("Weather"),
-  elevation: 0,
-);
-
-
-
-
 
